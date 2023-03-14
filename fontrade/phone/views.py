@@ -1,15 +1,19 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
+from .models import *
+
+main = ['Контакты', 'Вакансии', 'Отзывы', 'Адрес']
 
 
 def index(request):
-    return HttpResponse('My own page!')
+    posts = Phone.objects.all()
+    return render(request, 'phone/index.html', {'posts': posts, 'main': main, 'title': 'Главная страница'})
 
 
 def categories(request):
     if request.GET:
         return redirect('/', permanent=True)
-    return HttpResponse('<h1>Hello world!</h1>')
+    return render(request, 'phone/about.html', {'main': main, 'title': 'О сайте'})
 
 
 def pageNotFound(request, exception):

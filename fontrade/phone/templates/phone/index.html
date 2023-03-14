@@ -1,0 +1,15 @@
+{% extends 'phone/base.html' %}
+{% block content %}
+{{title}}
+<h1>HELLO WORLD</h1>
+<ul>
+    {% for m in posts %}
+    <li>
+        <h2>{{m.title}}</h2>
+        <p>{{m.content}}</p>
+        <p>{{m.time_create}}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
