@@ -1,13 +1,14 @@
 {% extends 'phone/base.html' %}
 {% block content %}
 {{title}}
-<h1>HELLO WORLD</h1>
+<h1>Главная страница</h1>
+<a href="/fog/dogs">О нас</a>
 <ul>
     {% for m in posts %}
     <li>
-        <h2>{{m.title}}</h2>
-        <p>{{m.content}}</p>
-        <p>{{m.time_create}}</p>
+        <h2 class="button">{{m.title}}</h2>
+        <p class="button">{{m.content|truncatewords:20}}</p>
+        <p class="button">{{m.time_create}}</p>
         <hr>
     </li>
     {% endfor %}
