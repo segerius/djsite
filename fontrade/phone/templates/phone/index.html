@@ -6,9 +6,11 @@
 <ul>
     {% for m in posts %}
     <li>
-        <h2 class="button">{{m.title}}</h2>
-        <p class="button">{{m.content|truncatewords:20}}</p>
-        <p class="button">{{m.time_create}}</p>
+        <details>
+            <summary class="button">{{m.title}}</summary>
+            <p class="button">{{m.content|truncatewords:20}}</p>
+            <p class="button">{{m.time_create}}</p>
+        </details>
         <hr>
     </li>
     {% endfor %}
