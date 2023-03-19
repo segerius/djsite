@@ -2,7 +2,7 @@
 {% block content %}
 {{title}}
 <h1>Главная страница</h1>
-<a href="/dogs">О нас</a>
+<a href="{% url 'about' %}">О нас</a>
 <ul>
     {% for m in posts %}
     <li>
