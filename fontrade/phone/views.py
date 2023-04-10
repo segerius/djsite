@@ -28,15 +28,24 @@ def about(request):
 
 
 def addpage(request):
-    return HttpResponse("Добавление статьи")
+    context = {'menu': menu,
+               'title': 'Добавление статьи',
+               }
+    return render(request, 'phone/addpage.html', context=context)
 
 
 def contact(request):
-    return HttpResponse("Обратная связь")
+    context = {'menu': menu,
+               'title': 'Обратная связь',
+               }
+    return render(request, 'phone/addpage.html', context=context)
 
 
 def login(request):
-    return HttpResponse("Авторизация")
+    context = {'menu': menu,
+               'title': 'Авторизация',
+               }
+    return render(request, 'phone/addpage.html', context=context)
 
 
 def pageNotFound(request, exception):
